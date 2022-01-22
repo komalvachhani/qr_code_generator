@@ -9,11 +9,11 @@ from PyQt5.QtCore import Qt
 class QRCodeApp (QWidget):
     def __init__(self): # window setup
         super().__init__()
-        self.setFixedSize(700,400)
+        self.setFixedSize(800,800)
         self.setWindowTitle('QR Code Generator')
         self.initUI()
 
-    #function for the UI
+    #function for the GUI
     def initUI(self):
         # font definition
         font = QFont('Open Sans', 16)
@@ -98,9 +98,9 @@ class QRCodeApp (QWidget):
         file_name = self.textInput.text()
 
         if file_name:
-            self.imageLabel.pixmap().save(os.path.join(current_directory, file_name + '.png'))
-            self.statusBar.showMessage('QR Code is saved at {0}' .format(os.path.join(current_directory, file_name + '.png')))
-
+            self.imageLabel.pixmap().save(os.path.join(current_directory, 'myqrcode.png'))
+            self.statusBar.showMessage('QR Code is saved at {0}' .format(os.path.join(current_directory, 'myqrcode.png')))
+            
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
